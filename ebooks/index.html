@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-books · Nós em Nós</title>
+<meta name="description" content="Três e-books para olhar a relação de vocês com calma: de onde vieram, onde estão e o que querem cultivar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: carinhosa, falada, de dois psicólogos para quem vive uma relação; nada de manual.
+   IDEA: a mesa do café onde o casal senta para preencher os cadernos; cada e-book se deixa experimentar.
+   PICTURE: foto do café com as três capas em cima; depois o mapa que se desenha, o radar que responde e a semana que se pinta.
+   COLOUR and TYPE: paleta do kit; Playfair com negrito em uma ou duas palavras, Chinchilla para o que é fala, Nunito Sans no texto.
+   LAYOUT: celular primeiro; cada seção com composição própria, como no carrossel inicial. */
+@font-face{font-family:"Chinchilla";src:url(fonts/chinchilla.ttf) format("truetype");font-display:swap}
+:root{color-scheme:light;--vinho:#8F0835;--rosa:#C75077;--creme:#F1E8C7;--off:#FFFEF4;--grafite:#464A45;--oliva:#9CA764;--verde:#BAD797;--tinta:#2E312D;--suave:#5C605A;--pf:"Playfair Display",Georgia,serif;--hand:"Chinchilla","Playfair Display",cursive}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--off);color:var(--tinta);font:17px/1.65 "Nunito Sans",system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--pf);font-weight:500;line-height:1.08;margin:0;text-wrap:balance}
+h1 b,h2 b,p b,.q b{font-weight:800}
+p{margin:0 0 1em}
+button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible{outline:3px solid var(--rosa);outline-offset:3px}
+.hand{font-family:var(--hand);font-weight:400;line-height:1.1}
+.band{padding:clamp(56px,8vw,112px) max(5vw,20px);position:relative;overflow:hidden}
+.wrap{max-width:1140px;margin:0 auto;position:relative}
+.col{max-width:620px;margin:0 auto;position:relative}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:14px 30px;border-radius:999px;background:var(--vinho);color:var(--off);font-weight:800;font-size:17px;text-decoration:none;border:0;transition:transform .2s,background .2s}
+.btn:hover{background:#6F0629;transform:translateY(-2px)}
+.btn svg{transition:transform .2s}.btn:hover svg{transform:translateX(4px)}
+.price{font-family:var(--pf);font-size:32px;font-weight:700;color:var(--vinho);white-space:nowrap}
+.buy{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+/* topo */
+.bar{display:flex;align-items:center;justify-content:space-between;padding:16px max(5vw,20px);position:relative;z-index:4}
+.bar .mk{font-family:var(--hand);font-size:26px;color:var(--grafite);text-decoration:none}
+.bar .mk span{color:var(--vinho)}
+.bar a.go{color:var(--off);background:var(--vinho);font-weight:800;font-size:15px;text-decoration:none;padding:10px 18px;border-radius:999px}
+
+/* primeira tela */
+.hero{position:relative;background:var(--off);overflow:hidden}
+.hero .giant{opacity:.2}
+.hero .g1{font-size:clamp(160px,30vw,380px);top:40px;left:-.14em;bottom:auto;right:auto}
+.hero .g2{font-size:clamp(150px,28vw,360px);bottom:-.18em;right:-.12em;top:auto;left:auto}
+.hero .in{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;max-width:1140px;margin:0 auto;padding:clamp(20px,4vw,56px) max(5vw,20px) clamp(56px,8vw,96px)}
+.hero .k{color:var(--vinho);font-size:22px;margin-bottom:14px}
+.hero h1{font-size:clamp(40px,6.4vw,74px);color:var(--grafite);letter-spacing:-.4px}
+.hero h1 b{color:var(--vinho)}
+.hero .sub{color:var(--suave);max-width:470px;margin:20px 0 26px;font-size:clamp(17px,2vw,19px)}
+.disc{position:relative;aspect-ratio:1;max-width:460px;width:100%;margin:0 auto}
+.disc::before{content:"";position:absolute;inset:4%;border-radius:50%;background:var(--verde);transform:scale(.6);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.disc.open::before{transform:scale(1)}
+.disc img{position:absolute;width:44%;left:28%;top:22%;border-radius:3px;box-shadow:0 18px 30px -16px rgba(0,0,0,.5);transition:transform 1s cubic-bezier(.2,.8,.2,1);transform-origin:50% 90%}
+.disc.open img:nth-child(1){transform:translate(-46%,8%) rotate(-14deg)}
+.disc.open img:nth-child(2){transform:translate(46%,8%) rotate(14deg)}
+.disc.open img:nth-child(3){transform:translateY(-6%);z-index:2}
+.disc.open img:nth-child(1):hover{transform:translate(-50%,0) rotate(-16deg)}
+.disc.open img:nth-child(2):hover{transform:translate(50%,0) rotate(16deg)}
+.disc.open img:nth-child(3):hover{transform:translateY(-12%)}
+.faixa{height:56px;background:var(--vinho) url(img/padrao-11.jpg) center/280px}
+
+/* abertura */
+.abre{background:var(--off);padding-top:clamp(80px,10vw,130px)}
+.giant{position:absolute;font-family:var(--hand);color:var(--rosa);opacity:.18;line-height:.8;pointer-events:none;user-select:none;white-space:nowrap}
+.giant.g1{font-size:clamp(150px,28vw,360px);top:-.08em;left:-.12em}
+.giant.g2{font-size:clamp(130px,24vw,310px);bottom:-.16em;right:-.1em}
+.abre .lead{font-family:var(--pf);font-size:clamp(28px,3.8vw,40px);line-height:1.18;color:var(--grafite);margin-bottom:.8em}
+.abre p{font-size:18px}
+.abre .end{font-family:var(--hand);color:var(--vinho);font-size:clamp(26px,3.4vw,34px);margin-top:1.1em;transform:rotate(-2deg);display:inline-block}
+
+/* por que juntos */
+.juntos{background:var(--grafite);color:var(--off)}
+.juntos h2{font-size:clamp(34px,4.6vw,52px);text-align:center;margin-bottom:14px}
+.juntos h2 b{color:var(--verde)}
+.juntos .intro{text-align:center;color:var(--creme);max-width:560px;margin:0 auto}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:760px;margin:clamp(34px,5vw,52px) auto 0;position:relative}
+.steps .rail{position:absolute;top:27px;left:16.6%;right:16.6%;height:2px;background:repeating-linear-gradient(90deg,rgba(186,215,151,.35) 0 8px,transparent 8px 14px)}
+.steps .fill{position:absolute;top:27px;left:16.6%;height:2px;width:0;background:repeating-linear-gradient(90deg,var(--verde) 0 8px,transparent 8px 14px);transition:width .6s ease}
+.step{background:none;border:0;color:var(--off);display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 4px;min-height:44px;position:relative}
+.step i{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--grafite);border:2px solid var(--verde);font-family:var(--hand);font-style:normal;font-size:26px;color:var(--verde);transition:background .3s,color .3s,transform .3s}
+.step span{font-family:var(--pf);font-size:clamp(16px,2.2vw,21px);line-height:1.2}
+.step[aria-selected=true] i{background:var(--verde);color:var(--grafite);transform:scale(1.08)}
+.stage{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:clamp(22px,4vw,48px);align-items:center;max-width:720px;margin:clamp(30px,4vw,44px) auto 0;background:var(--creme);border-radius:24px;padding:clamp(20px,3vw,32px)}
+.stage img{border-radius:3px;box-shadow:0 20px 34px -18px rgba(0,0,0,.6);transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s}
+.stage img.swap{opacity:0;transform:rotate(-6deg) translateY(10px)}
+.stage .hand{color:var(--vinho);font-size:24px;margin-bottom:6px}
+.stage p{font-family:var(--pf);font-size:clamp(22px,2.8vw,28px);line-height:1.25;margin:0;color:var(--grafite)}
+.juntos .after{text-align:center;color:var(--creme);max-width:600px;margin:clamp(30px,4vw,44px) auto 0;font-size:18px}
+.juntos .after b{color:var(--off)}
+
+/* e-books: base */
+.eb h2.sec{font-size:clamp(36px,5vw,56px);text-align:center;color:var(--vinho)}
+.book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(30px,5vw,72px);align-items:center}
+.book h3{font-size:clamp(30px,3.8vw,42px);color:var(--vinho);margin-bottom:6px}
+.book .meta{font-weight:800;font-size:14px;color:var(--rosa);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.book .meta img{width:54px;border-radius:2px;box-shadow:0 6px 12px -6px rgba(0,0,0,.5);transform:rotate(-5deg)}
+.tag{display:inline-block;font-weight:800;font-size:13px;color:var(--vinho);background:var(--off);border-radius:999px;padding:4px 12px;margin-bottom:12px}
+
+/* mapa */
+.mapa{background-color:var(--creme);background-image:repeating-linear-gradient(0deg,rgba(156,167,100,.2) 0 1px,transparent 1px 28px),repeating-linear-gradient(90deg,rgba(156,167,100,.2) 0 1px,transparent 1px 28px)}
+.mapa .head{text-align:center;margin-bottom:clamp(40px,6vw,72px)}
+.map{position:relative;aspect-ratio:4/3;max-width:520px;width:100%;margin:0 auto}
+.map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.pin{position:absolute;transform:translate(-50%,-100%);background:none;border:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:44px;min-height:44px}
+.pin svg{position:static;width:30px;height:38px;transition:transform .25s}
+.pin small{font-family:var(--hand);font-size:17px;color:var(--grafite);white-space:nowrap;background:rgba(255,254,244,.85);padding:1px 8px;border-radius:999px}
+.pin[aria-pressed=true] svg{transform:scale(1.25) translateY(-4px)}
+.pin[aria-pressed=true] small{background:var(--vinho);color:var(--off)}
+.quad{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}
+.quad div{background:var(--off);border-radius:14px;padding:14px 16px;font-size:15px;line-height:1.45;border-top:4px solid var(--oliva);transition:opacity .35s,transform .35s}
+.quad div:nth-child(2){border-color:var(--vinho)}.quad div:nth-child(3){border-color:var(--verde)}.quad div:nth-child(4){border-color:var(--rosa)}
+.quad.swap div{opacity:0;transform:translateY(8px)}
+.qtitle{font-family:var(--pf);font-size:22px;color:var(--grafite);margin-top:18px}
+.qtitle span{font-family:var(--hand);color:var(--vinho);margin-right:8px}
+
+/* diagnóstico */
+.diag{background:var(--off)}
+.radar{position:relative;max-width:440px;margin:0 auto;padding:34px 62px}
+.rbox{position:relative;aspect-ratio:1}
+.rbox svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.rbox .shape{transition:all .7s cubic-bezier(.2,.8,.2,1)}
+.dim{position:absolute;transform:translate(-50%,-50%);background:var(--off);border:1.5px solid var(--creme);border-radius:999px;padding:6px 12px;font-family:var(--pf);font-style:italic;font-size:15px;color:var(--grafite);min-height:36px;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.dim[aria-pressed=true]{background:var(--vinho);color:var(--off);border-color:var(--vinho)}
+.ask{background:var(--creme);border-radius:20px;padding:20px 22px;margin-top:8px;min-height:120px}
+.ask .k{font-weight:800;font-size:13px;color:var(--rosa);margin-bottom:6px}
+.ask p{font-family:var(--pf);font-size:clamp(20px,2.4vw,24px);line-height:1.3;color:var(--grafite);margin:0;transition:opacity .3s}
+.ask p.swap{opacity:0}
+.custa{font-family:var(--hand);color:var(--vinho);font-size:clamp(28px,3.6vw,38px);line-height:1.15;display:block;margin-top:14px;transform:rotate(-2deg)}
+
+/* 365 */
+.toq{background:var(--vinho);color:var(--off)}
+.toq::before{content:"";position:absolute;inset:0;background:url(img/padrao-10.jpg) center/360px;opacity:.12}
+.toq h3{color:var(--off)}
+.toq .meta{color:var(--verde)}
+.toq .meta img{outline:1.5px solid rgba(255,254,244,.55)}
+.toq p{color:var(--creme)}
+.toq .note5{font-size:15px;color:var(--creme);opacity:.9}
+.week{background:var(--off);color:var(--tinta);border-radius:26px;padding:clamp(22px,3vw,32px);box-shadow:0 30px 50px -30px rgba(0,0,0,.6)}
+.week .prompt{font-family:var(--pf);font-style:italic;font-size:clamp(20px,2.4vw,24px);line-height:1.3;color:var(--vinho);margin-bottom:6px}
+.week .how{font-size:14px;color:var(--suave);margin-bottom:16px}
+.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.day{display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;padding:0}
+.day small{font-size:12px;font-weight:700;color:var(--suave)}
+.day b{display:grid;place-items:center;width:100%;max-width:52px;aspect-ratio:1;border-radius:50%;border:2px dashed #CFC6A8;font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:19px;color:var(--off);transition:background .25s,transform .25s,border-color .25s}
+.day b.pop{animation:pop .35s}
+@keyframes pop{50%{transform:scale(1.18)}}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:18px;font-size:13px;color:var(--suave)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;font-style:normal;font-weight:800;font-size:12px;color:var(--off)}
+.tally{margin-top:16px;padding-top:14px;border-top:1px solid var(--creme);display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px}
+.tally p{margin:0;font-family:var(--hand);font-size:20px;color:var(--grafite)}
+.tally button{background:none;border:0;color:var(--vinho);font-weight:800;font-size:14px;text-decoration:underline;min-height:44px}
+
+/* como funciona */
+.how2{background:var(--off)}
+.how2 h2{font-size:clamp(34px,4.6vw,48px);color:var(--vinho);text-align:center;margin-bottom:clamp(30px,4vw,48px)}
+.feats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1040px;margin:0 auto}
+.feat{background:var(--creme);border-radius:22px;padding:22px 20px;font-size:16px;line-height:1.5}
+.feat svg{width:34px;height:34px;margin-bottom:12px;stroke:var(--vinho);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.feat:nth-child(2){background:var(--verde)}
+.feat:nth-child(3){background:var(--grafite);color:var(--off)}.feat:nth-child(3) svg{stroke:var(--verde)}
+.feat p{margin:0}
+
+/* quem somos */
+.who{background:var(--creme)}
+.who .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,80px);align-items:center}
+.who .hand{font-size:clamp(40px,6vw,64px);color:var(--vinho)}
+.who .intro{font-family:var(--pf);font-size:clamp(20px,2.4vw,24px);line-height:1.35;color:var(--grafite);margin:10px 0 0}
+.pair{display:flex;justify-content:center;gap:clamp(14px,3vw,28px);padding:20px 0}
+.pol{background:#fff;padding:10px 10px 12px;box-shadow:0 20px 34px -20px rgba(0,0,0,.45);width:min(46%,230px);position:relative;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.pol::before{content:"";position:absolute;top:-12px;left:50%;width:76px;height:24px;background:rgba(186,215,151,.75);transform:translateX(-50%) rotate(-3deg)}
+.pol:nth-child(1){transform:rotate(-4deg)}.pol:nth-child(2){transform:rotate(3.5deg) translateY(18px)}
+.pol:hover{transform:rotate(0) translateY(-6px) scale(1.03)}
+.pol img{width:100%;aspect-ratio:255/332;object-fit:cover}
+.pol .hand{font-size:22px;color:var(--grafite);text-align:center;margin-top:8px}
+.bios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:26px}
+.bios h3{font-size:20px;color:var(--vinho);margin-bottom:4px}
+.bios p{font-size:15px;line-height:1.55;margin:0;color:var(--tinta)}
+
+/* fechamento */
+.close{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);background:var(--vinho);color:var(--off);position:relative;overflow:hidden}
+.close .ph{position:relative;min-height:320px}
+.close .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.close .txt{padding:clamp(52px,7vw,104px) max(5vw,22px);position:relative;z-index:2}
+.close .q{font-family:var(--pf);font-size:clamp(26px,3.4vw,38px);line-height:1.22;margin-bottom:20px}
+.close .s{color:var(--creme);font-size:18px;margin-bottom:28px;max-width:440px}
+.close .price{color:var(--off)}
+.close .btn{background:var(--off);color:var(--vinho)}
+.close .btn:hover{background:var(--creme)}
+.close .sym{position:absolute;right:-60px;bottom:-40px;width:clamp(220px,30vw,380px);opacity:.9;transform:translateX(40%) rotate(-10deg);transition:transform 1.2s cubic-bezier(.2,.8,.2,1);z-index:1}
+.close.in .sym{transform:translateX(0) rotate(-6deg)}
+
+/* nota e rodapé */
+.note{background:var(--off);padding:34px max(5vw,20px)}
+.note p{font-size:15px;color:var(--suave);margin:0 auto;text-align:center;max-width:620px}
+.note b{color:var(--grafite)}
+footer{background:var(--grafite);color:var(--off);text-align:center;padding:48px 20px 96px}
+footer img{width:90px;margin:0 auto 14px}
+footer .hand{color:var(--verde);font-size:24px}
+
+/* barra fixa no celular */
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:20;display:none;align-items:center;justify-content:space-between;gap:12px;background:var(--grafite);color:var(--off);border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.sticky.on{transform:none}
+.sticky .price{font-size:22px;color:var(--off)}
+.sticky .btn{min-height:46px;padding:10px 20px;font-size:15px;background:var(--verde);color:var(--grafite)}
+
+@media(max-width:820px){
+  .hero .in{grid-template-columns:minmax(0,1fr)}
+  .disc{max-width:340px;order:-1}
+  .book,.who .wrap,.close{grid-template-columns:minmax(0,1fr)}
+  .book .viz{order:2}
+  .feats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .close .ph{min-height:260px}
+  .sticky{display:flex}
+}
+@media(max-width:520px){
+  .stage{grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:16px}
+  .stage p{font-size:20px}
+  .feats{grid-template-columns:minmax(0,1fr)}
+  .bios{grid-template-columns:minmax(0,1fr)}
+  .radar{padding:30px 50px}
+  .dim{font-size:13px;padding:5px 9px}
+  .quad{grid-template-columns:minmax(0,1fr)}
+  .pin small{font-size:14px}
+  .btn{width:100%}
+  .hero .buy{flex-direction:column;align-items:stretch;text-align:center;gap:8px}
+  .sticky .btn{width:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<main id="topo">
+<!-- 1. primeira tela -->
+<section class="hero">
+  <header class="bar">
+    <a class="mk" href="#topo">nós <span>EM</span> nós</a>
+    <a class="go" href="#comprar">Quero os três</a>
+  </header>
+  <span class="giant g1" aria-hidden="true">nós</span><span class="giant g2" aria-hidden="true">em nós</span>
+  <div class="in">
+    <div>
+      <p class="k hand">e-books</p>
+      <h1>Para não deixar o <b>amor</b> ser esquecido pelo <b>cansaço</b>.</h1>
+      <p class="sub">Três e-books para olhar a relação de vocês com calma: de onde vieram, onde estão e o que querem cultivar.</p>
+      <div class="buy" id="heroBuy">
+        <span class="price">R$59,90</span>
+        <a class="btn" href="#" data-checkout>Quero os três e-books <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="disc" id="fan" aria-hidden="true">
+      <img src="img/capa-mapa.jpg" alt=""><img src="img/capa-toques.jpg" alt=""><img src="img/capa-diagnostico.jpg" alt="">
+    </div>
+  </div>
+</section>
+<div class="faixa" aria-hidden="true"></div>
+
+<!-- 2. abertura -->
+<section class="band abre">
+  <span class="giant g1" aria-hidden="true">nós</span>
+  <span class="giant g2" aria-hidden="true">em nós</span>
+  <div class="col">
+    <p class="lead rv">Tem uma hora em que a relação entra no <b>automático</b>.</p>
+    <p class="rv d1">A rotina ocupa tudo, a conversa vira combinar quem busca, quem paga, quem resolve. Quando sobra tempo, ele vai para o que deu errado. O amor continua ali, mas vai ficando <b>para depois</b>.</p>
+    <p class="rv d2">Nessa hora é fácil procurar uma resposta pronta: uma regra, uma lista, um conselho de quem nunca viu vocês juntos. A gente acredita em <b>outro caminho</b>. Antes de mudar qualquer coisa, vale entender o que está acontecendo. E isso pede um tempo para <b>parar, perguntar e escrever</b>.</p>
+    <p class="end rv d3">Foi para isso que fizemos estes três e-books.</p>
+  </div>
+</section>
+
+<!-- 3. por que juntos -->
+<section class="band juntos">
+  <div class="wrap">
+    <h2 class="rv">Por que os <b>três</b> juntos</h2>
+    <p class="intro rv d1">Cada um olha para um tempo da relação.</p>
+    <div class="steps" role="tablist" aria-label="Os três tempos da relação">
+      <span class="rail" aria-hidden="true"></span><span class="fill" id="fill" aria-hidden="true"></span>
+      <button class="step" role="tab" aria-selected="true" data-i="0"><i>1</i><span>A história</span></button>
+      <button class="step" role="tab" aria-selected="false" data-i="1"><i>2</i><span>O agora</span></button>
+      <button class="step" role="tab" aria-selected="false" data-i="2"><i>3</i><span>Os dias que vêm</span></button>
+    </div>
+    <div class="stage" role="tabpanel" aria-live="polite">
+      <img id="stImg" src="img/capa-mapa.jpg" alt="Capa de O Mapa do Nosso Amor">
+      <div><p class="hand" id="stName">O Mapa do Nosso Amor</p><p id="stTxt">O Mapa volta à história de vocês.</p></div>
+    </div>
+    <p class="after rv">Um responde ao que o outro levanta. O que aparece no Diagnóstico <b>ganha sentido</b> quando vocês olham a história no Mapa e <b>vira gesto</b>, todo dia, no 365 Toques.</p>
+  </div>
+</section>
+
+<!-- 4a. mapa -->
+<section class="band eb mapa" id="ebooks">
+  <div class="wrap">
+    <div class="head"><h2 class="sec rv">Os três e-books</h2></div>
+    <div class="book">
+      <div class="rv">
+        <span class="tag">e-book 1</span>
+        <h3>O Mapa do Nosso Amor</h3>
+        <p class="meta"><img src="img/capa-mapa.jpg" alt="">10 páginas</p>
+        <p>A história de vocês em três momentos: quando se conheceram, depois da primeira crise e hoje. Cada momento tem uma página para escrever o que viveram ali e o que mudou. Serve para lembrar o que construiu o amor de vocês, inclusive o que veio das fases difíceis.</p>
+      </div>
+      <div class="viz rv d1">
+        <div class="map" id="map">
+          <svg viewBox="0 0 400 300" aria-hidden="true">
+            <defs><mask id="draw"><path id="mpath" d="M85 250 C 115 215 130 230 155 195 S 175 150 205 160 S 265 185 290 130 S 325 70 350 68" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/></mask></defs>
+            <path d="M85 250 C 115 215 130 230 155 195 S 175 150 205 160 S 265 185 290 130 S 325 70 350 68" fill="none" stroke="#C75077" stroke-width="3" stroke-dasharray="7 8" stroke-linecap="round" mask="url(#draw)"/>
+          </svg>
+        </div>
+        <p class="qtitle" id="qT"><span>01</span>Quando nos conhecemos…</p>
+        <div class="quad" id="quad"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4b. diagnóstico -->
+<section class="band eb diag">
+  <div class="wrap book">
+    <div class="viz rv">
+      <div class="radar">
+        <div class="rbox" id="rbox">
+          <svg viewBox="-110 -110 220 220" aria-hidden="true">
+            <g id="grid" fill="none" stroke="#E4DCC0" stroke-width="1"></g>
+            <polygon class="shape" id="shB" fill="rgba(156,167,100,.45)" stroke="#9CA764" stroke-width="1.5"/>
+            <polygon class="shape" id="shA" fill="rgba(199,80,119,.45)" stroke="#8F0835" stroke-width="1.5"/>
+            <circle id="dot" r="6" fill="#8F0835"/>
+          </svg>
+        </div>
+      </div>
+      <div class="ask"><p class="k">Uma das perguntas do e-book</p><p id="askP">Eu sei o que é importante para a minha parceria dentro e fora da relação?</p></div>
+    </div>
+    <div class="rv d1">
+      <span class="tag" style="background:var(--creme)">e-book 2</span>
+      <h3>Diagnóstico da Nossa Relação</h3>
+      <p class="meta"><img src="img/capa-diagnostico.jpg" alt="">19 páginas</p>
+      <p>Um olhar honesto para cinco dimensões da relação: disposição, presença, compreensão, resolutividade e objetivos. Começa com perguntas abertas, depois vêm respostas de sim ou não, e no fim um balanço de prós e contras, em que vocês dão peso ao que importa. No caminho aparece uma pergunta difícil:<span class="custa">"meu relacionamento vale o que me custa?"</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4c. 365 -->
+<section class="band eb toq">
+  <div class="wrap book">
+    <div class="rv">
+      <span class="tag">e-book 3</span>
+      <h3>365 Toques de Amor</h3>
+      <p class="meta"><img src="img/capa-toques.jpg" alt="">10 páginas</p>
+      <p>Um ano de registro, dia por dia. A partir das cinco linguagens do amor (atos de serviço, palavras de afirmação, presentes, toque e tempo de qualidade), vocês anotam o jeito como o afeto apareceu em cada dia. No fim de cada mês, param para refletir.</p>
+      <p class="note5">Aqui as cinco linguagens são um ponto de partida para observar a relação, não uma régua para medir quem ama mais.</p>
+    </div>
+    <div class="viz rv d1">
+      <div class="week">
+        <p class="prompt">“Hoje, de que forma eu percebi o amor do outro por mim?”</p>
+        <p class="how">Toque em cada dia para escolher uma letra.</p>
+        <div class="days" id="days"></div>
+        <div class="legend" id="legend"></div>
+        <div class="tally"><p id="tally">Uma semana em branco.</p><button type="button" id="clear">Limpar</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. como funciona -->
+<section class="band how2">
+  <h2 class="rv">Como funciona</h2>
+  <div class="feats">
+    <div class="feat rv"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 4h11l6 6v18H8z"/><path d="M19 4v6h6M12 17h9M12 22h6"/></svg><p>São três PDFs preenchíveis, 39 páginas no total. Dá para escrever direto nos campos, no computador ou no celular, ou imprimir e fazer à mão.</p></div>
+    <div class="feat rv d1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5v15M10 14l6 6 6-6M6 25h20"/></svg><p>Para as respostas ficarem salvas, baixe o arquivo e abra no Adobe Acrobat Reader, que é gratuito. No navegador dá para escrever, mas nem sempre salva.</p></div>
+    <div class="feat rv d2"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="11" r="4"/><circle cx="22" cy="12" r="3.5"/><path d="M4 26c1-5 4-8 7-8s6 3 7 8M17 25c.8-3.8 2.8-6 5-6s4.2 2.2 5 6"/></svg><p>Vocês podem fazer juntos ou alguém pode começar sozinho, no ritmo de cada um.</p></div>
+    <div class="feat rv d3"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="8" width="24" height="17" rx="2"/><path d="M5 9l11 9 11-9"/></svg><p>O acesso chega pela Hotmart, no e-mail usado na compra.</p></div>
+  </div>
+</section>
+
+<!-- 6. quem somos -->
+<section class="band who">
+  <div class="wrap">
+    <div class="pair rv">
+      <figure class="pol" style="margin:0"><img src="img/ilo.jpg" alt="Francisco Ilo"><figcaption class="hand">Ilo</figcaption></figure>
+      <figure class="pol" style="margin:0"><img src="img/mari.jpg" alt="Mariana Virgínio"><figcaption class="hand">Mari</figcaption></figure>
+    </div>
+    <div class="rv d1">
+      <p class="hand">Somos Ilo e Mari,</p>
+      <p class="intro">psicólogos de relacionamentos. No Nós em Nós a gente conversa sobre o que acontece entre pessoas que se amam e, mesmo assim, se desencontram.</p>
+      <div class="bios">
+        <div><h3>Francisco Ilo</h3><p>Psicólogo (CRP 11/17085), formado pela UFC, pós-graduado em Terapia de Aceitação e Compromisso, com formação em Terapia Comportamental Integrativa de Casais. Atende adultos e casais, presencial e online.</p></div>
+        <div><h3>Mariana Virgínio</h3><p>Psicóloga (CRP 11/11809), formada pela UFC, especialista em Terapia Analítico-Comportamental e em Psicoterapia Analítica Funcional, com formação em ACT e Terapia de Casal. Atende adultos e casais, presencial e online.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. fechamento -->
+<section class="close" id="comprar">
+  <div class="ph"><img src="img/flores.jpg" alt=""></div>
+  <div class="txt">
+    <p class="q rv">Você não precisa de <b>conselho</b> de quem não conhece a sua relação. Talvez precise de <b>ferramentas</b> para entender e ajustar o que é importante nela.</p>
+    <p class="s rv d1">Três e-books, 39 páginas para preencher e um tempo que é de vocês.</p>
+    <div class="buy rv d2">
+      <span class="price">R$59,90</span>
+      <a class="btn" href="#" data-checkout>Quero os três e-books <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <img class="sym" src="img/simbolo.png" alt="" aria-hidden="true">
+</section>
+
+<section class="note">
+  <p><b>Antes de comprar.</b> Os e-books são um material de reflexão e não substituem terapia. Se na relação houver violência, ameaça ou um sofrimento difícil de carregar sozinho, procure ajuda profissional.</p>
+</section>
+</main>
+
+<footer>
+  <img src="img/logo-07.png" alt="Nós em Nós">
+  <p class="hand">soltando os nós do seu relacionamento.</p>
+</footer>
+
+<div class="sticky" id="sticky" aria-hidden="true">
+  <span class="price">R$59,90</span>
+  <a class="btn" href="#" data-checkout tabindex="-1">Quero os três</a>
+</div>
+
+<script>
+{
+  const CHECKOUT = ""; // link do checkout da Hotmart
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  if (CHECKOUT) $$('[data-checkout]').forEach(a => a.href = CHECKOUT);
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* capas abrem */
+  setTimeout(() => $('#fan').classList.add('open'), still ? 0 : 250);
+
+  /* aparecer ao rolar */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .18 });
+  $$('.rv, .close').forEach(el => io.observe(el));
+
+  /* por que os três juntos */
+  const ST = [
+    { img: 'img/capa-mapa.jpg', name: 'O Mapa do Nosso Amor', txt: 'O Mapa volta à história de vocês.' },
+    { img: 'img/capa-diagnostico.jpg', name: 'Diagnóstico da Nossa Relação', txt: 'O Diagnóstico olha para o agora.' },
+    { img: 'img/capa-toques.jpg', name: '365 Toques de Amor', txt: 'O 365 Toques acompanha os dias que vêm pela frente.' }
+  ];
+  const steps = $$('.step'), stImg = $('#stImg');
+  let cur = 0, auto = null;
+  const setStep = i => {
+    cur = i;
+    steps.forEach((b, k) => b.setAttribute('aria-selected', k === i));
+    $('#fill').style.width = (i * 33.3) + '%';
+    stImg.classList.add('swap');
+    setTimeout(() => { stImg.src = ST[i].img; stImg.alt = 'Capa de ' + ST[i].name; $('#stName').textContent = ST[i].name; $('#stTxt').textContent = ST[i].txt; stImg.classList.remove('swap'); }, still ? 0 : 280);
+  };
+  steps.forEach(b => b.addEventListener('click', () => { clearInterval(auto); auto = null; setStep(+b.dataset.i); }));
+  const jio = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting && auto === null && !still) auto = setInterval(() => setStep((cur + 1) % 3), 3600);
+    if (!e.isIntersecting && auto) { clearInterval(auto); auto = null; }
+  }), { threshold: .4 });
+  jio.observe($('.juntos'));
+
+  /* mapa: caminho que se desenha e três marcos */
+  const PH = [
+    { n: '01', t: 'Quando nos conhecemos…', x: 85, y: 250, s: 'quando nos conhecemos',
+      q: ['O que a minha parceria fazia e eu gostava?', 'O que a minha parceria fazia e eu não gostava?', 'O que a minha parceria não fazia, mas eu gostaria que fizesse?', 'O que a minha parceria nunca fez e eu não gostaria que ela fizesse?'] },
+    { n: '02', t: 'Depois da primeira crise…', x: 205, y: 160, s: 'depois da primeira crise',
+      q: ['O que a minha parceria, mesmo nessa fase difícil, fazia e eu gostava?', 'O que a minha parceria nessa fase difícil fazia e eu não gostava?', 'O que a minha parceria não fazia e/ou deixou de fazer e eu teria gostado que fizesse?', 'O que a minha parceria não fazia e teria piorado a nossa situação se ela fizesse?'] },
+    { n: '03', t: 'Hoje em dia…', x: 350, y: 68, s: 'hoje em dia',
+      q: ['O que a minha parceria faz e eu gosto?', 'O que a minha parceria faz e eu não gosto?', 'O que a minha parceria não faz, mas eu gostaria que fizesse?', 'O que a minha parceria nunca fez e eu não quero que ela faça?'] }
+  ];
+  const map = $('#map'), quad = $('#quad');
+  const pinSvg = c => `<svg viewBox="0 0 30 38" aria-hidden="true"><path d="M15 37s12-12.6 12-22A12 12 0 0 0 3 15c0 9.4 12 22 12 22z" fill="${c}"/><circle cx="15" cy="15" r="4.6" fill="#FFFEF4"/></svg>`;
+  PH.forEach((p, i) => {
+    const b = document.createElement('button');
+    b.className = 'pin'; b.type = 'button';
+    b.style.left = (p.x / 400 * 100) + '%'; b.style.top = (p.y / 300 * 100) + '%';
+    b.setAttribute('aria-pressed', i === 0);
+    b.innerHTML = pinSvg(['#9CA764', '#C75077', '#8F0835'][i]) + `<small>${p.s}</small>`;
+    b.addEventListener('click', () => showPhase(i));
+    map.appendChild(b);
+  });
+  const showPhase = i => {
+    $$('.pin').forEach((b, k) => b.setAttribute('aria-pressed', k === i));
+    quad.classList.add('swap');
+    setTimeout(() => {
+      $('#qT').innerHTML = `<span>${PH[i].n}</span>${PH[i].t}`;
+      quad.innerHTML = PH[i].q.map(t => `<div>${t}</div>`).join('');
+      quad.classList.remove('swap');
+    }, still ? 0 : 220);
+  };
+  quad.innerHTML = PH[0].q.map(t => `<div>${t}</div>`).join('');
+  const mp = $('#mpath'), len = mp.getTotalLength();
+  mp.style.strokeDasharray = len; mp.style.strokeDashoffset = still ? 0 : len;
+  mp.style.transition = 'stroke-dashoffset 2.4s ease';
+  new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { mp.style.strokeDashoffset = 0; o.disconnect(); } }), { threshold: .35 }).observe(map);
+
+  /* diagnóstico: radar */
+  const DIM = [
+    { n: 'Disposição', q: 'Eu sei o que é importante para a minha parceria dentro e fora da relação?' },
+    { n: 'Presença', q: 'Em geral, você sente que a sua parceria está presente de coração quando vocês estão juntos?' },
+    { n: 'Compreensão', q: 'Vocês conseguem conversar sem se sentirem atacados ou impelidos a atacar?' },
+    { n: 'Resolutividade', q: 'Os problemas de vocês costumam ser resolvidos ou são problemas recorrentes?' },
+    { n: 'Objetivos', q: 'Você e sua parceria têm planos que conversam entre si?' }
+  ];
+  const R = 100, ang = i => (-90 + i * 72) * Math.PI / 180, pt = (i, r) => [Math.cos(ang(i)) * r, Math.sin(ang(i)) * r];
+  const poly = vals => vals.map((v, i) => pt(i, v * R).map(n => n.toFixed(1)).join(',')).join(' ');
+  $('#grid').innerHTML = [.25, .5, .75, 1].map(f => `<polygon points="${poly([f, f, f, f, f])}"/>`).join('') +
+    DIM.map((_, i) => { const [x, y] = pt(i, R); return `<line x1="0" y1="0" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>`; }).join('');
+  const A0 = [.82, .5, .7, .42, .78], B0 = [.58, .8, .48, .74, .55];
+  const rbox = $('#rbox'), askP = $('#askP');
+  DIM.forEach((d, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'dim'; b.textContent = d.n;
+    const [x, y] = pt(i, 1);
+    b.style.left = (50 + x * 50) + '%'; b.style.top = (50 + y * 50) + '%';
+    b.setAttribute('aria-pressed', i === 0);
+    b.addEventListener('click', () => pickDim(i));
+    rbox.appendChild(b);
+  });
+  const pickDim = i => {
+    $$('.dim').forEach((b, k) => b.setAttribute('aria-pressed', k === i));
+    const A = A0.map((v, k) => k === i ? Math.min(.95, v + .12) : v), B = B0.map((v, k) => k === i ? Math.min(.95, v + .1) : v);
+    $('#shA').setAttribute('points', poly(A)); $('#shB').setAttribute('points', poly(B));
+    const [x, y] = pt(i, Math.max(A[i], B[i]) * R); $('#dot').setAttribute('cx', x); $('#dot').setAttribute('cy', y);
+    askP.classList.add('swap');
+    setTimeout(() => { askP.textContent = DIM[i].q; askP.classList.remove('swap'); }, still ? 0 : 200);
+  };
+  $('#shA').setAttribute('points', poly([0, 0, 0, 0, 0])); $('#shB').setAttribute('points', poly([0, 0, 0, 0, 0]));
+  $('#dot').setAttribute('cx', 0); $('#dot').setAttribute('cy', 0);
+  new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { pickDim(0); o.disconnect(); } }), { threshold: .35 }).observe(rbox);
+
+  /* 365: uma semana para experimentar */
+  const L = [
+    { k: 'S', n: 'Atos de serviço', c: '#9CA764' },
+    { k: 'A', n: 'Palavras de afirmação', c: '#C75077' },
+    { k: 'P', n: 'Presentes', c: '#8F0835' },
+    { k: 'T', n: 'Toque físico', c: '#464A45' },
+    { k: 'Q', n: 'Tempo de qualidade', c: '#7FA35A' }
+  ];
+  const DN = ['seg', 'ter', 'qua', 'qui', 'sex', 'sáb', 'dom'];
+  const wk = Array(7).fill(-1);
+  const days = $('#days');
+  days.innerHTML = DN.map((d, i) => `<button type="button" class="day" data-i="${i}" aria-label="${d}: sem letra"><small>${d}</small><b></b></button>`).join('');
+  $('#legend').innerHTML = L.map(l => `<span><i style="background:${l.c}">${l.k}</i>${l.n}</span>`).join('');
+  const paint = () => {
+    $$('.day').forEach((b, i) => {
+      const v = wk[i], dot = b.querySelector('b');
+      dot.textContent = v < 0 ? '' : L[v].k;
+      dot.style.background = v < 0 ? 'transparent' : L[v].c;
+      dot.style.borderColor = v < 0 ? '#CFC6A8' : L[v].c;
+      dot.style.borderStyle = v < 0 ? 'dashed' : 'solid';
+      b.setAttribute('aria-label', DN[i] + ': ' + (v < 0 ? 'sem letra' : L[v].n));
+    });
+    const cnt = L.map((_, k) => wk.filter(v => v === k).length), filled = wk.filter(v => v >= 0).length;
+    const top = Math.max(...cnt), win = cnt.map((c, k) => c === top ? L[k].n.toLowerCase() : null).filter(Boolean);
+    $('#tally').textContent = filled === 0 ? 'Uma semana em branco.' : filled < 3 ? `${filled} de 7 dias marcados.` : (win.length === 1 ? `Nesta semana, mais ${win[0]}.` : `Empate: ${win.join(' e ')}.`);
+  };
+  days.addEventListener('click', e => {
+    const b = e.target.closest('.day'); if (!b) return;
+    const i = +b.dataset.i; wk[i] = wk[i] >= L.length - 1 ? -1 : wk[i] + 1;
+    const dot = b.querySelector('b'); dot.classList.remove('pop'); void dot.offsetWidth; dot.classList.add('pop');
+    paint();
+  });
+  $('#clear').addEventListener('click', () => { wk.fill(-1); paint(); });
+  paint();
+
+  /* barra fixa no celular */
+  const sticky = $('#sticky');
+  let heroGone = false, closeIn = false;
+  const upd = () => sticky.classList.toggle('on', heroGone && !closeIn);
+  new IntersectionObserver(es => es.forEach(e => { heroGone = !e.isIntersecting && e.boundingClientRect.top < 0; upd(); })).observe($('#heroBuy'));
+  new IntersectionObserver(es => es.forEach(e => { closeIn = e.isIntersecting; upd(); }), { threshold: .1 }).observe($('#comprar'));
+}
+</script>
+</body>
+</html>
